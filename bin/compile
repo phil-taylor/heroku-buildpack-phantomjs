@@ -25,6 +25,6 @@ mkdir -p $BUILD_DIR/vendor
 tar jxf $CACHE_DIR/$FILE_NAME -C $CACHE_DIR
 mv $CACHE_DIR/$ARCHIVE_NAME $BUILD_DIR/vendor/phantomjs
 
-status "Building runtime environment"
+echo "-----> Building runtime environment"
 mkdir -p $BUILD_DIR/.profile.d
 echo "export PATH=\"\$PATH:\$HOME/vendor/phantomjs/bin\"; export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:\$HOME/vendor/phantomjs/lib\";" > $BUILD_DIR/.profile.d/phantomjs.sh
