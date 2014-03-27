@@ -24,3 +24,5 @@ mkdir -p $CACHE_DIR/$ARCHIVE_NAME
 mkdir -p $BUILD_DIR/vendor
 tar jxf $CACHE_DIR/$FILE_NAME -C $CACHE_DIR
 mv $CACHE_DIR/$ARCHIVE_NAME $BUILD_DIR/vendor/phantomjs
+export PATH=$PATH:/home/vcap/app/vendor/phantomjs/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/vcap/app/vendor/phantomjs/lib
