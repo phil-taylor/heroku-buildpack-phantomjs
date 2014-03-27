@@ -19,11 +19,9 @@ $ git push heroku master
 
 Note
 -----
+This version has been patched so that the following environment variables are updated to include phantomjs paths.
 
-If you're using [heroku-buildpack-multi](https://github.com/ddollar/heroku-buildpack-multi) to include other buildpacks, you should set environment variable by your own to include following paths.
+    PATH="$PATH:/$HOME/vendor/phantomjs/bin"
+    LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/$HOME/vendor/phantomjs/lib"
 
-    PATH="/usr/local/bin:/usr/bin:/bin:/app/vendor/phantomjs/bin"
-    LD_LIBRARY_PATH="/usr/local/lib:/usr/lib:/lib:/app/vendor/phantomjs/lib"
-
-
-
+It has been tested and verified to work on CloudFoundry V2.
