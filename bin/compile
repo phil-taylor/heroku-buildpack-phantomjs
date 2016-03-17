@@ -26,8 +26,6 @@ tar jxf $CACHE_DIR/$FILE_NAME -C $CACHE_DIR
 mv $CACHE_DIR/$ARCHIVE_NAME $BUILD_DIR/vendor/phantomjs
 
 echo "-----> Building runtime environment"
-#mkdir -p $BUILD_DIR/.profile.d
-#echo "export PATH=\"\$PATH:\$HOME/app/vendor/phantomjs/bin\"; export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:\$HOME/app/vendor/phantomjs/lib\";" > $BUILD_DIR/.profile.d/phantomjs.sh
-echo "exporting PATH and LIBRARY_PATH"
-echo 'export PATH="$PATH:vendor/phantomjs/bin"' >> $PROFILE_PATH
-echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:vendor/phantomjs/lib"' >> $PROFILE_PATH
+mkdir -p $BUILD_DIR/.profile.d
+echo "export PATH=\"\$PATH:\$HOME/app/vendor/phantomjs/bin\"; export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:\$HOME/app/vendor/phantomjs/lib\";" > $BUILD_DIR/.profile.d/phantomjs.sh
+chmod 755 $BUILD_DIR/.profile.d/phantomjs.sh
